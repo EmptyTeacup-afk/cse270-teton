@@ -24,6 +24,7 @@ class TestSmokeTest():
   def test_adminPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
     self.driver.set_window_size(1936, 1056)
+    self.driver.find_element(By.LINK_TEXT, "Admin").click()
     elements = self.driver.find_elements(By.ID, "username")
     assert len(elements) > 0
     self.driver.find_element(By.ID, "username").click()
